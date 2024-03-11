@@ -1,39 +1,3 @@
-// const express = require('express');
-// const ytdl = require('ytdl-core');
-// const cors = require('cors');
-
-// const app = express();
-// const PORT = 5000;
-
-// app.use(cors());
-
-// app.get('/audio', async (req, res) => {
-//   const { videoUrl } = req.query;
-
-//   try {
-//     if (!ytdl.validateURL(videoUrl)) {
-//       throw new Error('Invalid YouTube URL');
-//     }
-
-//     const info = await ytdl.getInfo(videoUrl);
-//     const audioFormat = ytdl.chooseFormat(info.formats, { filter: 'audioonly' });
-
-//     if (!audioFormat) {
-//       throw new Error('No audio format found');
-//     }
-
-//     res.json({ audioUrl: audioFormat.url });
-//   } catch (err) {
-//     res.status(400).json({ error: err.message });
-//   }
-// });
-
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
-
-
-
 
 const express = require('express');
 const ytdl = require('ytdl-core');
