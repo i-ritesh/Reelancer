@@ -16,7 +16,7 @@ const AudioFetch = () => {
 
   const fetchAndPlaySong = async (songUrl) => {
     try {
-      const response = await axios.get("http://localhost:5000/audio", {
+      const response = await axios.get("https://reelancer-apis.vercel.app/audio", {
         params: { videoUrl: songUrl },
       });
       setAudioUrl(response.data.audioUrl);
@@ -72,7 +72,7 @@ const AudioFetch = () => {
       setIsLoading(true);
       let response;
       if (url.includes("playlist")) {
-        response = await axios.get("http://localhost:5000/playlist", {
+        response = await axios.get("https://reelancer-apis.vercel.app/playlist", {
           params: { playlistUrl: url },
         });
         const songUrls = response.data.songUrls;
@@ -91,7 +91,7 @@ const AudioFetch = () => {
           console.error("Playlist is empty.");
         }
       } else {
-        response = await axios.get("http://localhost:5000/audio", {
+        response = await axios.get("https://reelancer-apis.vercel.app/audio", {
           params: { videoUrl: url },
         });
         setAudioUrl(response.data.audioUrl);
